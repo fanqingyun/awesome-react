@@ -1,8 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './sass.scss';
 
-function App() {
+import Button from './Button.js'
+function App () {
   return (
     <div className="App">
       <header className="App-header">
@@ -17,8 +19,10 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+          <Button/>
         </a>
       </header>
+      <div className="font">scss</div>
     </div>
   );
 }
