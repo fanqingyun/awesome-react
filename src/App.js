@@ -1,18 +1,10 @@
 import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
-import './sass.scss';
 import { connect } from 'react-redux';
 import { increment } from './actions/index';
 
 // import Button from './Button.js'
 // 引入路由
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { HashRouter, BrowserRouter as Router, Route, Redirect, Switch, Link, NavLink } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,7 +23,7 @@ class App extends React.Component {
         <div>
           <div>
             <div>current number: {this.props.number} <button onClick={() => this.onClick()}>点击+1</button></div>
-            <div>current number: {this.props.number} <button onClick={()=>this.onClick2()}>点击2秒后+1</button></div>
+            <div>current number: {this.props.number} <button onClick={() => this.onClick2()}>点击2秒后+1</button></div>
           </div>
           <ul>
             <li>
