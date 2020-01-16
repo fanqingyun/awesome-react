@@ -6,7 +6,6 @@ import Login from './modules/login/Login'
 import { DatePicker } from 'antd';
 // import Button from './Button.js'
 // 引入路由
-import { HashRouter, BrowserRouter as Router, Route, Redirect, Switch, Link, NavLink } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {

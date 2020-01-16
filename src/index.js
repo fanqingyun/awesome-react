@@ -4,10 +4,12 @@ import App from './App';
 // import * as serviceWorker from './serviceWorker';
 import store from './store/store';
 import { Provider } from 'react-redux';
+import CustomeRoutes from './router/routes'
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <CustomeRoutes/>
+    {/* <App /> */}
   </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
