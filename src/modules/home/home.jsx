@@ -3,7 +3,7 @@ class Home extends React.Component {
   render () {
     return (
       <div>
-        <hi>这是首页</hi>
+        <h1>这是首页</h1>
       </div>
     )
   }

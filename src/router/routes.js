@@ -1,13 +1,13 @@
 import config from './config'
 import React from 'react'
-import { HashRouter, BrowserRouter as Router, Route, Redirect, Switch, Link, NavLink } from 'react-router-dom';
+import { HashRouter, Route, Redirect, Switch, Link, NavLink } from 'react-router-dom';
 
 class CustomeRoutes extends React.Component {
   render () {
     return (
       <HashRouter>
         <Switch>
-            {config.map(({ path, component }, index) => (
+          {config.map(({ path, component }, index) => (
             <Route
               key={index}
               exact
@@ -15,6 +15,9 @@ class CustomeRoutes extends React.Component {
               component={component}
             />
           ))}
+          <Route path='/' render={() =>
+            <Redirect to='/login'></Redirect>}>
+          </Route>
         </Switch>
       </HashRouter>
     )
