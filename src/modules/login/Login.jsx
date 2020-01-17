@@ -53,11 +53,12 @@ class LoginForm extends React.Component {
     let userName = jsEncrypt.encrypt(user.userName)
     let password = jsEncrypt.encrypt(user.password)
     let params = {userName, password}
+    console.log(this)
     httpUtils.post(api.auth, params, (result) => {
       if (result.data.success) {
         sessionStorage.setItem('token', result.data.entity.token)
         // this.props.history.push(result.data.entity.defaultPage)
-        this.props.history.push('/home')
+        _this.props.history.push('/home')
       } else {
         // tipUtils.error(result.data.message)
       }
