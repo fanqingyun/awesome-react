@@ -58,7 +58,7 @@ class LoginForm extends React.Component {
       if (result.data.success) {
         sessionStorage.setItem('token', result.data.entity.token)
         // this.props.history.push(result.data.entity.defaultPage)
-        _this.props.history.push('/home')
+        _this.props.history.push('/userManage')
       } else {
         // tipUtils.error(result.data.message)
       }

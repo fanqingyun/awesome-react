@@ -1,6 +1,7 @@
 import {withRouter} from "react-router-dom";
 import Login from '../modules/login/Login'
 import Home from '../modules/home/home'
+import UserManage from '../modules/setting/userManage'
 export default [
   {
     path: '/login',
@@ -8,9 +9,10 @@ export default [
   },
   {
     path: '/home',
-    Component: Home,
-    children: [
-
-    ]
+    Component: withRouter(Home)
+  },
+  {
+    path: '/userManage',
+    Component: UserManage
   }
 ]

@@ -1,0 +1,31 @@
+.header {
+  background-color: #001529;
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.main-content {
+  margin: 10px 0;
+  padding: 10;
+  background: #fff;
+}
+
+.menu-show-btn {
+  color: #fff;
+  display: block;
+  text-align: center;
+}
+
+.ant-menu-inline-collapsed {
+  width: 40px !important;
+}
+
+// .ant-layout-sider-collapsed {
+//   position: fixed !important;
+//   top: 40px !important;
+//   height: 100% !important;
+//   min-width: 40px !important;
+//   width: 40px !important;
+// }

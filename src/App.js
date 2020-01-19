@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { increment } from './actions/index';
-import 'antd/dist/antd.css';
 // 引入菜单
 import Container from './frame/container'
 class App extends React.Component {

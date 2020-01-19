@@ -1,12 +1,14 @@
 import axios from 'axios'
-// 全局默认
-// axios.defaults.headers.post['Content-Type'] = 'application/json'
-// axios.defaults.headers.get['Content-Type'] = 'application/json'
+// 全局默认(这样子设置传参可以不是json)
+axios.defaults.headers.post['Content-Type'] = 'application/json'
+axios.defaults.headers.get['Content-Type'] = 'application/json'
 // 添加请求拦截器
 axios.interceptors.request.use(
   config => {
     // 对响应数据做点什么
-    console.log(config)
+    // 暂时这么设置
+    config.headers['Authorization'] = sessionStorage.getItem('token')
+    // console.log(config)
     return config;
   },
   error => {
@@ -18,7 +20,7 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   response => {
     // 对响应数据做点什么
-    console.log(response)
+    // console.log(response)
     return response;
   },
   error => {
