@@ -56,7 +56,7 @@ class CustomeMenu extends React.Component {
                   key={item.href}
                   title={
                     <span>
-                      <Icon type={item.icon} />
+                      <Icon component={() => (<i className={item.icon} />)} />
                       <span>{item.name}</span>
                     </span>
                   }
@@ -76,7 +76,7 @@ class CustomeMenu extends React.Component {
               ) : (
                   <Menu.Item key={item.href}>
                     <Link to={item.href}>
-                      <Icon type={item.icon} />
+                      <Icon component={() => (<i className={item.icon} />)} />
                       <span>{item.name}</span>
                     </Link>
                   </Menu.Item>

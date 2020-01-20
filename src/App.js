@@ -1,15 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { increment } from './actions/index';
 // 引入菜单
 import CustomeRoutes from './router/routes'
 
 class App extends React.Component {
-  onClick () {
-    this.props.dispatch(increment())
+  state = {
+    test: 121212
   }
-  onClick2 () {
-    this.props.dispatch({ type: 'INCREMENT_ASYNC' })
+  componentDidMount () {
+    console.log(this.props)
   }
   render () {
     return (
@@ -19,9 +17,12 @@ class App extends React.Component {
     );
   }
 }
-export default connect(
-  state => ({
-    number: state.number
-  })
-)(App);
-// export default App;
+// export default connect(
+//   state => ({
+//     ...state
+//   })
+// )(App);
+
+//连接组件
+
+export default App;

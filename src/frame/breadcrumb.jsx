@@ -25,12 +25,13 @@ class CustomeBreadcrumb extends React.Component {
     this.getBreadcrumb(this.props.location.pathname)
   }
   render () {
-    // const icon = this.state.entity.icon ? <Icon type={this.state.entity.icon} /> : null
     return (
-      <Breadcrumb>
-        <Icon type={this.state.entity.icon} />
-        {this.state.entity.breadCrumbData.map((item, key) => (<Breadcrumb.Item key={key}>{item}</Breadcrumb.Item>))}
-      </Breadcrumb>
+      <div>
+        <Icon component={() => (<i className={this.state.entity.icon} />)} />
+        <Breadcrumb style={{display: 'inline-block', marginLeft: 5}}>
+          {this.state.entity.breadCrumbData.map((item, key) => (<Breadcrumb.Item key={key}>{item}</Breadcrumb.Item>))}
+        </Breadcrumb>
+      </div>
     )
   }
 }
