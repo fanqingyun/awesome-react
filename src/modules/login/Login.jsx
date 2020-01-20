@@ -1,6 +1,7 @@
+import {withRouter} from "react-router-dom";
 import React from 'react'
 import './login.scss'
-import { Form, Icon, Input, Button, Alert, message } from 'antd';
+import { Form, Icon, Input, Button, Alert } from 'antd';
 import Logo from './images/NBU-LOGO.png'
 import { JSEncrypt } from 'jsencrypt'
 import httpUtils from '../../utils/httpUtils'
@@ -11,12 +12,9 @@ const api = {
   auth: '/api/login/auth'
 }
 class LoginForm extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      clientWidth: `${document.documentElement.clientWidth}px`,
-      clientHeight: `${document.documentElement.clientHeight}px`,
-    }
+  state = {
+    clientWidth: `${document.documentElement.clientWidth}px`,
+    clientHeight: `${document.documentElement.clientHeight}px`,
   }
   resizeWin () {
     this.setState({
@@ -53,7 +51,6 @@ class LoginForm extends React.Component {
     let userName = jsEncrypt.encrypt(user.userName)
     let password = jsEncrypt.encrypt(user.password)
     let params = {userName, password}
-    console.log(this)
     httpUtils.post(api.auth, params, (result) => {
       if (result.data.success) {
         sessionStorage.setItem('token', result.data.entity.token)
@@ -75,7 +72,6 @@ class LoginForm extends React.Component {
     });
   }
   componentDidMount () {
-    console.log(this.props)
     window.addEventListener('resize', this.resizeWin.bind(this))
   }
   componentWillUnmount () {
@@ -124,4 +120,4 @@ class LoginForm extends React.Component {
   }
 }
 const Login = Form.create({ name: 'loginForm' })(LoginForm);
-export default Login
+export default withRouter(Login)

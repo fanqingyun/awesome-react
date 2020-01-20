@@ -5,7 +5,7 @@ import Breadcrumb from './breadcrumb'
 import { Layout } from 'antd';
 import './frame.scss'
 
-const { Content, Footer, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 class Container extends React.Component {
   state = {
@@ -21,7 +21,7 @@ class Container extends React.Component {
     let collapsed = !this.state.collapsed
     this.setState({ collapsed, showMenuIcon: collapsed ? 'icon-indent-increase' : 'icon-indent-decrease' })
   }
-  componentWillMount = () => {
+  componentDidMount = () => {
     window.addEventListener('resize', () => {
       this.setState({
         clientWidth: document.documentElement.clientWidth - 80,
@@ -30,7 +30,7 @@ class Container extends React.Component {
     })
   }
   componentWillUnmount = () => {
-    window.removeEventListener('resize')
+    window.removeEventListener('resize', () => {})
   }
   render () {
     return (

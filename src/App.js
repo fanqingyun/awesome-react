@@ -2,11 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { increment } from './actions/index';
 // 引入菜单
-import Container from './frame/container'
+import CustomeRoutes from './router/routes'
+
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   onClick () {
     this.props.dispatch(increment())
   }
@@ -16,7 +14,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Container />
+        <CustomeRoutes />
       </div>
     );
   }

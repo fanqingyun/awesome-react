@@ -4,12 +4,11 @@ const initialState = {
 
 const incrementReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'INCREMENT': {
+    case 'INCREMENT': 
       state.number += 1
       return { ...state }
-      break
-    };
-    default: return state;
+    default:
+       return state;
   }
 };
 export default incrementReducer;

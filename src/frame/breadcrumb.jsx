@@ -13,7 +13,6 @@ class CustomeBreadcrumb extends React.Component {
     }
   }
   getBreadcrumb = (pathname) => {
-    console.log(this.props)
     httpUtils.post('/api/systemMgr/getBreadcrumb', pathname, (result) => {
       if (result.data.success) {
         this.setState({
@@ -29,7 +28,7 @@ class CustomeBreadcrumb extends React.Component {
     // const icon = this.state.entity.icon ? <Icon type={this.state.entity.icon} /> : null
     return (
       <Breadcrumb>
-        {/* {icon} */}
+        <Icon type={this.state.entity.icon} />
         {this.state.entity.breadCrumbData.map((item, key) => (<Breadcrumb.Item key={key}>{item}</Breadcrumb.Item>))}
       </Breadcrumb>
     )
