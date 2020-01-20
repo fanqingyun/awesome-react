@@ -19,3 +19,19 @@ react + react-router-dom + antd + axios + redux/react-redux/redux-saga
 ![Image text](https://raw.githubusercontent.com/fanqingyun/awesome-react/master/README/whole.png)
 
 
+待实现功能：
+
+路由守卫
+
+错误页面
+
+权限
+
+添加其他方式的请求，如文件上传
+
+请求时加载中...效果(考虑多个请求)
+
+常用组件封装
+
+图形可视化
+
