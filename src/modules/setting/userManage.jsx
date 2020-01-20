@@ -24,7 +24,7 @@ export default UserManage
 //需要渲染什么数据
 function mapStateToProps(state) {
   return {
-      tiger: state
+      tiger: state.tiger
   }
 }
 //需要触发什么行为
